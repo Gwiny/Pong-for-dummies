@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "constants.h"
 class Ball : public sf::Drawable, public sf::Transformable{
-	const float speed;
+	static const float speed;
 public:
 	Ball();
 	void update();

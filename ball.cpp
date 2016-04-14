@@ -1,11 +1,11 @@
 
 #include "ball.h"
-const float speed = 5.0;
+const float Ball::speed = 5.0;
 
 Ball::Ball() :
 
-position(50, 50);
-	direction = 0.0; {
+	position(50, 50),
+	direction = 0.0 {
 	setPosition(position);
 		
 }
