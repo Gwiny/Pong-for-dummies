@@ -1,4 +1,4 @@
-#include "ball.h"
+#include "ball.cpp"
 #include <SFML/Graphics.hpp>
 
 int main()
@@ -7,7 +7,7 @@ int main()
 	sf::Texture tx_pongstick;
 
 	sf::RectangleShape rect;
-	Ball ball;
+	//Ball ball;
 	rect.setFillColor(sf::Color::White);
 	rect.setSize(sf::Vector2f(16, 64));
 
