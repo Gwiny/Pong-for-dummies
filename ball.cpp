@@ -16,3 +16,7 @@ void Ball::update(){
 	move(distance);
 	
 }
+
+void Ball::draw(){
+	//comments
+}

@@ -7,7 +7,7 @@ int main()
 	sf::Texture tx_pongstick;
 
 	sf::RectangleShape rect;
-	Ball ball;
+	Ball ball(90);
 	rect.setFillColor(sf::Color::White);
 	rect.setSize(sf::Vector2f(16, 64));
 
