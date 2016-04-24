@@ -3,11 +3,12 @@
 const float Ball::speed = 0.2;
 
 Ball::Ball(float angle) :
-	direction(angle) ,
+	direction(angle),
+	radius(10),
 	position(500.0, 500.0){
 	setPosition(position);
 	circle.setFillColor(sf::Color::White);
-	circle.setRadius(10);		
+	circle.setRadius(radius);		
 }
 
 
@@ -27,4 +28,15 @@ void Ball::update(){
 void Ball::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 	states.transform *= getTransform();
 	target.draw(circle, states);
+}
+
+bool Ball::checkPoint(sf::Vector2f point) {
+	float ax = getPosition().x;
+	float ay = getPosition().y;
+
+	float px = point.x;
+	float py = point.y;
+
+	float sqrDistance = ((ax - px) * (ax - px)) + ((ay - py) * (ay - py));
+	return (sqrDistance <= radius * radius);
 }
