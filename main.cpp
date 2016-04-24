@@ -16,7 +16,7 @@ int main()
 
 	float position_x = 20;
 	float position_y = 50;
-	int s_speed = 0;
+	float s_speed = 0;
 	int move = 0;
 
 
@@ -28,21 +28,26 @@ int main()
 				if (event.type == sf::Event::Closed)
 					window.close();
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-					s_speed = -10;
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-					s_speed = 10;
+					s_speed = -0.2;
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+					s_speed = 0.2;
+				else
+					s_speed = 0;
 					
 			}
 			///SOMETHING LIKE AN UPDATE CYCLE
-			position_y = +s_speed;
+			position_y += s_speed;
 			rect.setPosition(position_x, position_y);
+			ball.update();
 			
 
 
 			///SOMETHING LIKE DRAW CYCLE
 			window.clear(sf::Color::Black);
 			window.draw(rect);
+			window.draw(ball);
 			window.display();
+			
 		}
 
 		

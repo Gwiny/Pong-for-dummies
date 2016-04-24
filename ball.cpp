@@ -3,20 +3,20 @@
 const float Ball::speed = 5.0;
 
 Ball::Ball(float angle) :
-
-	position(50, 50),
-	direction(cos(angle * DEG2RAD), sin(angle * DEG2RAD)) {
+	direction(90),
+	position(50, 50){
 	setPosition(position);
-		
+	circle.setFillColor(sf::Color::White);
+	circle.setRadius(10);		
 }
 
 
 void Ball::update(){
-	sf::Vector2f distance = direction * speed;
-	move(distance);
-	
+	position.x += cos(direction)*speed;
+	position.y += sin(direction)*speed;
+	setPosition(position);
 }
 
-void Ball::draw(){
-	//comments
+void Ball::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+	target.draw(circle, states);
 }
