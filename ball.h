@@ -9,6 +9,6 @@ public:
 	//void onEvent(const sf::Event& event);
 private:
 	sf::Vector2f position;
-	int direction;
+	float direction;
 	sf::CircleShape circle;
 };
