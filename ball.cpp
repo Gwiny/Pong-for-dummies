@@ -3,7 +3,7 @@
 const float Ball::speed = 5.0;
 
 Ball::Ball(float angle) :
-	direction(90),
+	direction(angle),
 	position(50, 50){
 	setPosition(position);
 	circle.setFillColor(sf::Color::White);
